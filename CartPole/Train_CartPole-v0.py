@@ -36,8 +36,8 @@ class DQNConfig:
         self.memory_capacity = 100000  # capacity of Replay Memory
         self.batch_size = 64
         self.target_update = 4 # update frequency of target net
-        self.device = 'cpu' # torch.device(
-            #"cuda" if torch.cuda.is_available() else "cpu")  # check gpu
+        self.device = torch.device(
+            "cuda" if torch.cuda.is_available() else "cpu")  # check gpu
         self.hidden_dim = 256  # hidden size of net
 
 ################################################################################
