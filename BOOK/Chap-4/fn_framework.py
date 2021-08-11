@@ -94,7 +94,7 @@ class Trainer():
     #
     def train_loop(self, env, agent, episode = 200, initial_count = -1,
                    render = False, observe_interval = 0):
-        self.experiences = deque(maxlen=self.buffer_size)
+        self.experiences = deque(maxlen = self.buffer_size)
         self.training = False
         self.training_count = 0
         self.reward_log = []
@@ -178,7 +178,7 @@ class Observer():
         return self.transform(self._env.reset())
     #
     def render(self):
-        self._env.render(mode="human")
+        self._env.render(mode = "human")
     #
     def step(self, action):
         n_state, reward, done, info = self._env.step(action)
