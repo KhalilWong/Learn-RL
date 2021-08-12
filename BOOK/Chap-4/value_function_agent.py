@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
-from sklearn.externals import joblib
+import joblib
 import gym
 from fn_framework import FNAgent, Trainer, Observer
 
@@ -107,7 +107,7 @@ def main(play):
         agent = ValueFunctionAgent.load(env, path)
         agent.play(env)
     else:
-        trained = trainer.train(env)
+        trained = trainer.train(env, episode_count = 1000)
         trainer.logger.plot("Rewards", trainer.reward_log,
                             trainer.report_interval)
         trained.save(path)
